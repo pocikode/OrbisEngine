@@ -2,8 +2,13 @@ cmake_minimum_required(VERSION 3.10)
 
 project(OrbisEngine)
 
+set(CMAKE_C_STANDARD 17)
+set(CMAKE_C_STANDARD_REQUIRED ON)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 set(SRC_FILES
   src/Engine.cpp
+  src/Application.cpp
 )
 
 include_directories(include)
@@ -26,7 +31,7 @@ target_link_libraries(
 )
 
 if(APPLE)
-  target_link_libraries(${PROJECT_NAME} "-framework OpenGL")
+    target_link_libraries(${PROJECT_NAME} "-framework OpenGL")
 endif()
 
 target_link_directories(
