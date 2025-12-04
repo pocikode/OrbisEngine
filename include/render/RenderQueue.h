@@ -1,4 +1,5 @@
 #pragma once
+#include <glm/mat4x4.hpp>
 #include <vector>
 
 namespace Orbis
@@ -12,6 +13,7 @@ struct RenderCommand
 {
     Mesh *mesh = nullptr;
     Material *material = nullptr;
+    glm::mat4 modelMatrix;
 };
 
 class RenderQueue
