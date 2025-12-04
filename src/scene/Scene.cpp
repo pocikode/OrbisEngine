@@ -152,4 +152,14 @@ bool Scene::SetParent(GameObject *obj, GameObject *parent)
     return result;
 }
 
+void Scene::SetMainCamera(GameObject *camera)
+{
+    m_mainCamera = camera;
+}
+
+GameObject *Scene::GetMainCamera()
+{
+    return m_mainCamera;
+}
+
 } // namespace Orbis

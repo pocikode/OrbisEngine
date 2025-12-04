@@ -1,6 +1,8 @@
 #include "core/Engine.h"
 #include "core/Application.h"
 #include "graphics/GraphicsAPI.h"
+#include "render/RenderQueue.h"
+#include "scene/components/CameraComponent.h"
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
@@ -84,7 +86,27 @@ void Engine::Run()
         m_graphicsAPI.SetClearColor(1.0f, 1.0f, 1.0f, 1.0f);
         m_graphicsAPI.ClearBuffers();
 
-        m_renderQueue.Draw(m_graphicsAPI);
+        int width = 0;
+        int height = 0;
+        glfwGetWindowSize(m_window, &width, &height);
+        float aspect = static_cast<float>(width) / static_cast<float>(height);
+
+        CameraData cameraData;
+        if (m_currentScene)
+        {
+            if (auto cameraObj = m_currentScene->GetMainCamera())
+            {
+                // logic for matrices
+                auto cameraComponent = cameraObj->GetComponent<CameraComponent>();
+                if (cameraComponent)
+                {
+                    cameraData.viewMatrix = cameraComponent->GetViewMatrix();
+                    cameraData.projectionMatrix = cameraComponent->GetProjectionMatrix(aspect);
+                }
+            }
+        }
+
+        m_renderQueue.Draw(m_graphicsAPI, cameraData);
 
         glfwSwapBuffers(m_window);
     }
@@ -124,6 +146,16 @@ GraphicsAPI &Engine::GetGraphicsAPI()
 RenderQueue &Engine::GetRenderQueue()
 {
     return m_renderQueue;
+}
+
+void Engine::SetScene(Scene *scene)
+{
+    m_currentScene.reset(scene);
+}
+
+Scene *Engine::GetScene()
+{
+    return m_currentScene.get();
 }
 
 } // namespace Orbis

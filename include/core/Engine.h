@@ -2,6 +2,7 @@
 #include "graphics/GraphicsAPI.h"
 #include "input/InputManager.h"
 #include "render/RenderQueue.h"
+#include "scene/Scene.h"
 #include <chrono>
 #include <memory>
 
@@ -35,8 +36,12 @@ class Engine
     GraphicsAPI &GetGraphicsAPI();
     RenderQueue &GetRenderQueue();
 
+    void SetScene(Scene *scene);
+    Scene *GetScene();
+
   private:
     std::unique_ptr<Application> m_application;
+    std::unique_ptr<Scene> m_currentScene;
     std::chrono::steady_clock::time_point m_lastTimePoint;
     GLFWwindow *m_window = nullptr;
     InputManager m_inputManager;

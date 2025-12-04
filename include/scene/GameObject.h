@@ -1,6 +1,7 @@
 #pragma once
 #include "glm/ext/vector_float3.hpp"
 #include "scene/Component.h"
+#include <cstddef>
 #include <glm/mat4x4.hpp>
 #include <glm/vec3.hpp>
 #include <memory>
@@ -22,6 +23,20 @@ class GameObject
     void MarkForDestroy();
 
     void AddComponent(Component *component);
+    template <typename T, typename = typename std::enable_if_t<std::is_base_of_v<Component, T>>> T *GetComponent()
+    {
+        size_t typeID = Component::StaticTypeID<T>();
+
+        for (auto &component : m_components)
+        {
+            if (component->GetTypeID() == typeID)
+            {
+                return static_cast<T *>(component.get());
+            }
+        }
+
+        return nullptr;
+    }
 
     glm::vec3 GetPosition() const;
     void SetPosition(glm::vec3 &pos);
