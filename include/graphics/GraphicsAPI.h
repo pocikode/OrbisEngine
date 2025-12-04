@@ -6,6 +6,7 @@ namespace Orbis
 {
 
 class ShaderProgram;
+class Material;
 
 class GraphicsAPI
 {
@@ -14,6 +15,7 @@ class GraphicsAPI
         const std::string &vertexSource, const std::string &fragmentSource
     );
     void BindShaderProgram(ShaderProgram *shaderProgram);
+    void BindMaterial(Material *material);
 };
 
 } // namespace Orbis

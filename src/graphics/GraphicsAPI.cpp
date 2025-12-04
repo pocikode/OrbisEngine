@@ -1,5 +1,6 @@
 #include "graphics/GraphicsAPI.h"
 #include "graphics/ShaderProgram.h"
+#include "render/Material.h"
 #include <iostream>
 #include <memory>
 
@@ -55,7 +56,18 @@ std::shared_ptr<ShaderProgram> GraphicsAPI::CreateShaderProgram(
 
 void GraphicsAPI::BindShaderProgram(ShaderProgram *shaderProgram)
 {
-    shaderProgram->Bind();
+    if (shaderProgram)
+    {
+        shaderProgram->Bind();
+    }
+}
+
+void GraphicsAPI::BindMaterial(Material *material)
+{
+    if (material)
+    {
+        material->Bind();
+    }
 }
 
 } // namespace Orbis

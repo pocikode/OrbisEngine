@@ -12,6 +12,7 @@ set(SRC_FILES
   src/input/InputManager.cpp
   src/graphics/ShaderProgram.cpp
   src/graphics/GraphicsAPI.cpp
+  src/render/Material.cpp
 )
 
 include_directories(include)
