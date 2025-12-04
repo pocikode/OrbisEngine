@@ -10,6 +10,8 @@ set(SRC_FILES
   src/core/Engine.cpp
   src/core/Application.cpp
   src/input/InputManager.cpp
+  src/graphics/ShaderProgram.cpp
+  src/graphics/GraphicsAPI.cpp
 )
 
 include_directories(include)

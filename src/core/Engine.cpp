@@ -1,5 +1,6 @@
 #include "core/Engine.h"
 #include "core/Application.h"
+#include "graphics/GraphicsAPI.h"
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
@@ -108,6 +109,11 @@ Application *Engine::GetApplication()
 InputManager &Engine::GetInputManager()
 {
     return m_inputManager;
+}
+
+GraphicsAPI &Engine::GetGraphicsAPI()
+{
+    return m_graphicsAPI;
 }
 
 } // namespace Orbis
