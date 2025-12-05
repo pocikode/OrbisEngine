@@ -2,6 +2,7 @@
 #include "glm/ext/matrix_float4x4.hpp"
 #include "glm/ext/matrix_transform.hpp"
 #include "glm/ext/vector_float3.hpp"
+#include "glm/gtc/quaternion.hpp"
 
 namespace Orbis
 {
@@ -68,12 +69,12 @@ void GameObject::SetPosition(const glm::vec3 &pos)
     m_position = pos;
 }
 
-glm::vec3 GameObject::GetRotation() const
+glm::quat GameObject::GetRotation() const
 {
     return m_rotation;
 }
 
-void GameObject::SetRotation(const glm::vec3 &rot)
+void GameObject::SetRotation(const glm::quat &rot)
 {
     m_rotation = rot;
 }
@@ -96,9 +97,7 @@ glm::mat4 GameObject::GetLocalTransform() const
     mat = glm::translate(mat, m_position);
 
     // rotation
-    mat = glm::rotate(mat, m_rotation.x, glm::vec3(1.0f, 0.0f, 0.0f)); // x-axis
-    mat = glm::rotate(mat, m_rotation.y, glm::vec3(0.0f, 1.0f, 0.0f)); // y-axis
-    mat = glm::rotate(mat, m_rotation.z, glm::vec3(0.0f, 0.0f, 1.0f)); // z-axis
+    mat = mat * glm::mat4_cast(m_rotation);
 
     // scale
     mat = glm::scale(mat, m_scale);
