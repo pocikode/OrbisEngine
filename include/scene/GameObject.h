@@ -39,13 +39,13 @@ class GameObject
     }
 
     glm::vec3 GetPosition() const;
-    void SetPosition(glm::vec3 &pos);
+    void SetPosition(const glm::vec3 &pos);
 
     glm::vec3 GetRotation() const;
-    void SetRotation(glm::vec3 &rot);
+    void SetRotation(const glm::vec3 &rot);
 
     glm::vec3 GetScale() const;
-    void SetScale(glm::vec3 &scale);
+    void SetScale(const glm::vec3 &scale);
 
     glm::mat4 GetLocalTransform() const;
     glm::mat4 GetWorldTransform() const;

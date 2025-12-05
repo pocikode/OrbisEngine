@@ -63,7 +63,7 @@ glm::vec3 GameObject::GetPosition() const
     return m_position;
 }
 
-void GameObject::SetPosition(glm::vec3 &pos)
+void GameObject::SetPosition(const glm::vec3 &pos)
 {
     m_position = pos;
 }
@@ -73,7 +73,7 @@ glm::vec3 GameObject::GetRotation() const
     return m_rotation;
 }
 
-void GameObject::SetRotation(glm::vec3 &rot)
+void GameObject::SetRotation(const glm::vec3 &rot)
 {
     m_rotation = rot;
 }
@@ -83,7 +83,7 @@ glm::vec3 GameObject::GetScale() const
     return m_scale;
 }
 
-void GameObject::SetScale(glm::vec3 &scale)
+void GameObject::SetScale(const glm::vec3 &scale)
 {
     m_scale = scale;
 }
