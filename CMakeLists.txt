@@ -1,7 +1,5 @@
 cmake_minimum_required(VERSION 3.30)
 
-include(FetchContent)
-
 project(GeniEngine)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -46,12 +44,7 @@ pkg_check_modules(GLEW REQUIRED glew)
 include_directories(${GLEW_INCLUDE_DIRS})
 
 # glm
-FetchContent_Declare(
-	glm
-	GIT_REPOSITORY	https://github.com/g-truc/glm.git
-	GIT_TAG 	a532f5b1cf27d6a3c099437e6959cf7e398a0a67 #refs/tags/1.0.2
-)
-FetchContent_MakeAvailable(glm)
+add_subdirectory(thirdparty/glm)
 
 # stb
 include_directories(thirdparty/stb)
