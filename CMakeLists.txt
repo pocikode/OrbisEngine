@@ -50,11 +50,15 @@ add_subdirectory(thirdparty/glm)
 # stb
 include_directories(thirdparty/stb)
 
+# nlohmann json
+add_subdirectory(thirdparty/nlohmann_json)
+
 target_link_libraries(
   ${PROJECT_NAME}
   ${GLFW_LIBRARIES}
   ${GLEW_LIBRARIES}
   glm::glm
+  nlohmann_json::nlohmann_json
 )
 
 if(APPLE)
