@@ -18,6 +18,7 @@ set(SRC_FILES
   src/input/InputManager.cpp
   src/graphics/ShaderProgram.cpp
   src/graphics/GraphicsAPI.cpp
+  src/graphics/Texture.cpp
   src/render/Material.cpp
   src/render/Mesh.cpp
   src/render/RenderQueue.cpp

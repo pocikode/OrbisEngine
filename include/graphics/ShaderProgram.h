@@ -7,6 +7,8 @@
 namespace Geni
 {
 
+class Texture;
+
 class ShaderProgram
 {
   public:
@@ -21,10 +23,12 @@ class ShaderProgram
     void SetUniform(const std::string &name, float value);
     void SetUniform(const std::string &name, float v0, float v1);
     void SetUniform(const std::string &name, const glm::mat4 &mat);
+    void SetTexture(const std::string &name, Texture *texture);
 
   private:
     GLuint m_ID = 0;
     std::unordered_map<std::string, GLint> m_uniformLocationCache;
+    int m_currentTextureUnit = 0;
 };
 
 } // namespace Geni

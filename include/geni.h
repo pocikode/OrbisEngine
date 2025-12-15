@@ -4,6 +4,7 @@
 #include "core/Engine.h"
 #include "graphics/GraphicsAPI.h"
 #include "graphics/ShaderProgram.h"
+#include "graphics/Texture.h"
 #include "graphics/VertexLayout.h"
 #include "input/InputManager.h"
 #include "io/FileSystem.h"
