@@ -1,10 +1,33 @@
 #include "graphics/Texture.h"
+#include "core/Engine.h"
+#include <memory>
+
+#define STB_IMAGE_IMPLEMENTATION
+#include <stb_image.h>
 
 namespace Geni
 {
 
 Texture::Texture(int width, int height, int numChannels, unsigned char *data)
     : m_width(width), m_height(height), m_numChannels(numChannels)
+{
+    Init(width, height, numChannels, data);
+}
+
+Texture::~Texture()
+{
+    if (m_ID > 0)
+    {
+        glDeleteTextures(1, &m_ID);
+    }
+}
+
+GLuint Texture::GetID() const
+{
+    return m_ID;
+}
+
+void Texture::Init(int width, int height, int numChannels, unsigned char *data)
 {
     glGenTextures(1, &m_ID);
     glBindTexture(GL_TEXTURE_2D, m_ID);
@@ -20,17 +43,28 @@ Texture::Texture(int width, int height, int numChannels, unsigned char *data)
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 }
 
-Texture::~Texture()
+std::shared_ptr<Texture> Texture::Load(const std::string &path)
 {
-    if (m_ID > 0)
-    {
-        glDeleteTextures(1, &m_ID);
-    }
-}
+    int width, height, numChannels;
 
-GLuint Texture::GetID() const
-{
-    return m_ID;
+    auto fs = Geni::Engine::GetInstance().GetFileSystem();
+    auto fullPath = fs.GetAssetsFolder() / path;
+
+    if (!std::filesystem::exists(fullPath))
+    {
+        return nullptr;
+    }
+
+    std::shared_ptr<Texture> result;
+
+    unsigned char *data = stbi_load(fullPath.string().c_str(), &width, &height, &numChannels, 0);
+    if (data)
+    {
+        result = std::make_shared<Texture>(width, height, numChannels, data);
+        stbi_image_free(data);
+    }
+
+    return result;
 }
 
 } // namespace Geni
