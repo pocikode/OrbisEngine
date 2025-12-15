@@ -8,12 +8,12 @@
 #include <GLFW/glfw3.h>
 #include <iostream>
 
-namespace Orbis
+namespace Geni
 {
 
 void keyCallback(GLFWwindow *window, int key, int, int action, int)
 {
-    auto &inputManager = Orbis::Engine::GetInstance().GetInputManager();
+    auto &inputManager = Geni::Engine::GetInstance().GetInputManager();
     if (action == GLFW_PRESS)
     {
         inputManager.SetKeyPressed(key, true);
@@ -26,7 +26,7 @@ void keyCallback(GLFWwindow *window, int key, int, int action, int)
 
 void mouseButtonCallback(GLFWwindow *window, int button, int action, int mods)
 {
-    auto &inputManager = Orbis::Engine::GetInstance().GetInputManager();
+    auto &inputManager = Geni::Engine::GetInstance().GetInputManager();
     if (action == GLFW_PRESS)
     {
         inputManager.SetMouseButtonPressed(button, true);
@@ -39,7 +39,7 @@ void mouseButtonCallback(GLFWwindow *window, int button, int action, int mods)
 
 void mouseCursorCallback(GLFWwindow *window, double xpos, double ypos)
 {
-    auto &inputManager = Orbis::Engine::GetInstance().GetInputManager();
+    auto &inputManager = Geni::Engine::GetInstance().GetInputManager();
     inputManager.SetMousePositionOld(inputManager.GetMousePositionCurrent());
 
     glm::vec2 currentPos(static_cast<float>(xpos), static_cast<float>(ypos));
@@ -69,7 +69,7 @@ bool Engine::Init(int width, int height)
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     glfwWindowHint(GLFW_SCALE_TO_MONITOR, GLFW_TRUE);
 
-    m_window = glfwCreateWindow(width, height, "OrbisEngine", nullptr, nullptr);
+    m_window = glfwCreateWindow(width, height, "GeniEngine", nullptr, nullptr);
     if (!m_window)
     {
         std::cout << "Error creating window" << std::endl;
@@ -208,4 +208,4 @@ Scene *Engine::GetScene()
     return m_currentScene.get();
 }
 
-} // namespace Orbis
+} // namespace Geni

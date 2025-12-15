@@ -4,7 +4,7 @@
 #include <string>
 #include <unordered_map>
 
-namespace Orbis
+namespace Geni
 {
 
 class ShaderProgram
@@ -27,4 +27,4 @@ class ShaderProgram
     std::unordered_map<std::string, GLint> m_uniformLocationCache;
 };
 
-} // namespace Orbis
+} // namespace Geni

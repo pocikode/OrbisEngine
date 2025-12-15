@@ -5,7 +5,7 @@
 #include <glm/gtc/quaternion.hpp>
 #include <glm/vec3.hpp>
 
-namespace Orbis
+namespace Geni
 {
 
 void PlayerControllerComponent::Update(float deltaTime)
@@ -60,4 +60,4 @@ void PlayerControllerComponent::Update(float deltaTime)
     m_owner->SetPosition(position);
 }
 
-} // namespace Orbis
+} // namespace Geni

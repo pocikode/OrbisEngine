@@ -2,7 +2,7 @@
 
 #include "scene/Component.h"
 
-namespace Orbis
+namespace Geni
 {
 
 class PlayerControllerComponent : public Component
@@ -17,4 +17,4 @@ class PlayerControllerComponent : public Component
     float m_moveSpeed = 1.0f;
 };
 
-} // namespace Orbis
+} // namespace Geni

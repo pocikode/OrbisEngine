@@ -9,7 +9,7 @@
 
 struct GLFWwindow;
 
-namespace Orbis
+namespace Geni
 {
 
 class Application;
@@ -52,4 +52,4 @@ class Engine
     FileSystem m_fileSystem;
 };
 
-} // namespace Orbis
+} // namespace Geni

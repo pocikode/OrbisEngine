@@ -4,7 +4,7 @@
 #include "glm/ext/vector_float3.hpp"
 #include "glm/gtc/quaternion.hpp"
 
-namespace Orbis
+namespace Geni
 {
 
 void GameObject::Update(float deltaTime)
@@ -115,4 +115,4 @@ glm::mat4 GameObject::GetWorldTransform() const
     return GetLocalTransform();
 }
 
-} // namespace Orbis
+} // namespace Geni

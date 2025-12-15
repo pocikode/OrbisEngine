@@ -5,7 +5,7 @@
 #include "render/RenderQueue.h"
 #include "scene/GameObject.h"
 
-namespace Orbis
+namespace Geni
 {
 
 MeshComponent::MeshComponent(const std::shared_ptr<Material> &material, const std::shared_ptr<Mesh> &mesh)
@@ -20,7 +20,7 @@ void MeshComponent::Update(float deltaTime)
         return;
     }
 
-    Orbis::RenderCommand command;
+    Geni::RenderCommand command;
     command.material = m_material.get();
     command.mesh = m_mesh.get();
     command.modelMatrix = GetOwner()->GetWorldTransform();
@@ -29,4 +29,4 @@ void MeshComponent::Update(float deltaTime)
     renderQueue.Submit(command);
 }
 
-} // namespace Orbis
+} // namespace Geni

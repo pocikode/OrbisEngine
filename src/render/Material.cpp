@@ -1,7 +1,7 @@
 #include "render/Material.h"
 #include "graphics/ShaderProgram.h"
 
-namespace Orbis
+namespace Geni
 {
 
 void Material::SetShaderProgram(const std::shared_ptr<ShaderProgram> &shaderProgram)
@@ -44,4 +44,4 @@ void Material::Bind()
     }
 }
 
-} // namespace Orbis
+} // namespace Geni

@@ -3,7 +3,7 @@
 #include "scene/Component.h"
 #include <memory>
 
-namespace Orbis
+namespace Geni
 {
 
 class Material;
@@ -22,4 +22,4 @@ class MeshComponent : public Component
     std::shared_ptr<Mesh> m_mesh;
 };
 
-} // namespace Orbis
+} // namespace Geni

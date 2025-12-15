@@ -1,6 +1,6 @@
 #include "input/InputManager.h"
 
-namespace Orbis
+namespace Geni
 {
 
 void InputManager::SetKeyPressed(int key, bool pressed)
@@ -63,4 +63,4 @@ const glm::vec2 &InputManager::GetMousePositionCurrent() const
     return m_mousePositionCurrent;
 }
 
-} // namespace Orbis
+} // namespace Geni

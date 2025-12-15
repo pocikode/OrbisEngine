@@ -2,7 +2,7 @@
 
 #include <filesystem>
 
-namespace Orbis
+namespace Geni
 {
 
 class FileSystem
@@ -12,4 +12,4 @@ class FileSystem
     std::filesystem::path GetAssetsFolder() const;
 };
 
-} // namespace Orbis
+} // namespace Geni

@@ -4,7 +4,7 @@
 #include <stdint.h>
 #include <vector>
 
-namespace Orbis
+namespace Geni
 {
 
 class Mesh
@@ -29,4 +29,4 @@ class Mesh
     VertexLayout m_vertexLayout;
 };
 
-} // namespace Orbis
+} // namespace Geni

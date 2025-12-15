@@ -1,6 +1,6 @@
 #pragma once
 
-namespace Orbis
+namespace Geni
 {
 
 class Application
@@ -18,4 +18,4 @@ class Application
     bool m_needsToBeClosed = false;
 };
 
-} // namespace Orbis
+} // namespace Geni

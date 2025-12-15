@@ -4,7 +4,7 @@
 #include <cstddef>
 #include <memory>
 
-namespace Orbis
+namespace Geni
 {
 
 void Scene::Update(float deltaTime)
@@ -162,4 +162,4 @@ GameObject *Scene::GetMainCamera()
     return m_mainCamera;
 }
 
-} // namespace Orbis
+} // namespace Geni

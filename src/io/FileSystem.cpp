@@ -12,7 +12,7 @@
 #include <unistd.h>
 #endif
 
-namespace Orbis
+namespace Geni
 {
 
 std::filesystem::path FileSystem::GetExecutableFolder() const
@@ -46,4 +46,4 @@ std::filesystem::path FileSystem::GetAssetsFolder() const
     return std::filesystem::weakly_canonical(GetExecutableFolder() / "assets");
 }
 
-} // namespace Orbis
+} // namespace Geni

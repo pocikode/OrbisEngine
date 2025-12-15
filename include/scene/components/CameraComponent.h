@@ -3,7 +3,7 @@
 #include "scene/Component.h"
 #include <glm/mat4x4.hpp>
 
-namespace Orbis
+namespace Geni
 {
 
 class CameraComponent : public Component
@@ -22,4 +22,4 @@ class CameraComponent : public Component
     float m_farPlane = 1000.0f;
 };
 
-} // namespace Orbis
+} // namespace Geni

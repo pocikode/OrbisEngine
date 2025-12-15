@@ -1,7 +1,7 @@
 #pragma once
 
 #include <cstddef>
-namespace Orbis
+namespace Geni
 {
 
 class GameObject;
@@ -42,4 +42,4 @@ class Component
         return TypeID();                                                                                               \
     }
 
-} // namespace Orbis
+} // namespace Geni

@@ -9,7 +9,7 @@
 #include <string>
 #include <vector>
 
-namespace Orbis
+namespace Geni
 {
 
 class GameObject
@@ -68,4 +68,4 @@ class GameObject
     friend class Scene;
 };
 
-} // namespace Orbis
+} // namespace Geni

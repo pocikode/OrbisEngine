@@ -4,7 +4,7 @@
 #include <unordered_map>
 #include <utility>
 
-namespace Orbis
+namespace Geni
 {
 
 class ShaderProgram;
@@ -25,4 +25,4 @@ class Material
     std::unordered_map<std::string, std::pair<float, float>> m_float2Params;
 };
 
-} // namespace Orbis
+} // namespace Geni

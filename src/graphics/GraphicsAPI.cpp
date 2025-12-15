@@ -6,7 +6,7 @@
 #include <iostream>
 #include <memory>
 
-namespace Orbis
+namespace Geni
 {
 
 bool GraphicsAPI::Init()
@@ -124,4 +124,4 @@ void GraphicsAPI::DrawMesh(Mesh *mesh)
     }
 }
 
-} // namespace Orbis
+} // namespace Geni

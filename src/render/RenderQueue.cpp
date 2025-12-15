@@ -3,7 +3,7 @@
 #include "graphics/ShaderProgram.h"
 #include "render/Material.h"
 
-namespace Orbis
+namespace Geni
 {
 
 void RenderQueue::Submit(const RenderCommand &command)
@@ -28,4 +28,4 @@ void RenderQueue::Draw(GraphicsAPI &graphicsAPI, const CameraData &cameraData)
     m_commands.clear();
 }
 
-} // namespace Orbis
+} // namespace Geni

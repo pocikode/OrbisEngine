@@ -5,7 +5,7 @@
 #include <type_traits>
 #include <vector>
 
-namespace Orbis
+namespace Geni
 {
 
 class GameObject;
@@ -37,4 +37,4 @@ class Scene
     GameObject *m_mainCamera = nullptr;
 };
 
-} // namespace Orbis
+} // namespace Geni

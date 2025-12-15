@@ -1,6 +1,6 @@
 #include "core/Application.h"
 
-namespace Orbis
+namespace Geni
 {
 
 void Application::SetNeedsToBeClosed(bool value)
@@ -13,4 +13,4 @@ bool Application::NeedsToBeClosed() const
     return m_needsToBeClosed;
 }
 
-} // namespace Orbis
+} // namespace Geni

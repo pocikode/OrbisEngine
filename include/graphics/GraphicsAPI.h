@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-namespace Orbis
+namespace Geni
 {
 
 class ShaderProgram;
@@ -31,4 +31,4 @@ class GraphicsAPI
     void DrawMesh(Mesh *mesh);
 };
 
-} // namespace Orbis
+} // namespace Geni

@@ -2,7 +2,7 @@
 #include <glm/mat4x4.hpp>
 #include <vector>
 
-namespace Orbis
+namespace Geni
 {
 
 class Mesh;
@@ -32,4 +32,4 @@ class RenderQueue
     std::vector<RenderCommand> m_commands;
 };
 
-} // namespace Orbis
+} // namespace Geni

@@ -4,7 +4,7 @@
 #include "graphics/VertexLayout.h"
 #include <stdint.h>
 
-namespace Orbis
+namespace Geni
 {
 
 Mesh::Mesh(const VertexLayout &layout, std::vector<float> &vertices, const std::vector<uint32_t> &indices)
@@ -81,4 +81,4 @@ void Mesh::Draw()
     }
 }
 
-} // namespace Orbis
+} // namespace Geni

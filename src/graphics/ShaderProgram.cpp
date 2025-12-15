@@ -1,7 +1,7 @@
 #include "graphics/ShaderProgram.h"
 #include <glm/gtc/type_ptr.hpp>
 
-namespace Orbis
+namespace Geni
 {
 
 ShaderProgram::ShaderProgram(GLuint programID) : m_ID(programID)
@@ -50,4 +50,4 @@ void ShaderProgram::SetUniform(const std::string &name, const glm::mat4 &mat)
     glUniformMatrix4fv(loc, 1, GL_FALSE, glm::value_ptr(mat));
 }
 
-} // namespace Orbis
+} // namespace Geni

@@ -3,7 +3,7 @@
 #include <array>
 #include <glm/vec2.hpp>
 
-namespace Orbis
+namespace Geni
 {
 
 class InputManager
@@ -36,4 +36,4 @@ class InputManager
     glm::vec2 m_mousePositionCurrent = glm::vec2(0.0f);
 };
 
-} // namespace Orbis
+} // namespace Geni

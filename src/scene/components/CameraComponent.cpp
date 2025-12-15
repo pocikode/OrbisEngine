@@ -7,7 +7,7 @@
 #include "scene/GameObject.h"
 #include <glm/gtc/matrix_transform.hpp>
 
-namespace Orbis
+namespace Geni
 {
 
 void CameraComponent::Update(float deltaTime)
@@ -33,4 +33,4 @@ glm::mat4 CameraComponent::GetProjectionMatrix(float aspect) const
     return glm::perspective(glm::radians(m_fov), aspect, m_nearPlane, m_farPlane);
 }
 
-} // namespace Orbis
+} // namespace Geni

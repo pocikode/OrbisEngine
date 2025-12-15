@@ -3,7 +3,7 @@
 #include <cstdint>
 #include <vector>
 
-namespace Orbis
+namespace Geni
 {
 
 struct VertexElement
@@ -20,4 +20,4 @@ struct VertexLayout
     uint32_t stride = 0; // total size of a single vertex
 };
 
-} // namespace Orbis
+} // namespace Geni
