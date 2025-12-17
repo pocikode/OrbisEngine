@@ -1,5 +1,6 @@
 #pragma once
 #include "graphics/GraphicsAPI.h"
+#include "graphics/Texture.h"
 #include "input/InputManager.h"
 #include "io/FileSystem.h"
 #include "render/RenderQueue.h"
@@ -37,6 +38,7 @@ class Engine
     GraphicsAPI &GetGraphicsAPI();
     RenderQueue &GetRenderQueue();
     FileSystem &GetFileSystem();
+    TextureManager &GetTextureManager();
 
     void SetScene(Scene *scene);
     Scene *GetScene();
@@ -50,6 +52,7 @@ class Engine
     GraphicsAPI m_graphicsAPI;
     RenderQueue m_renderQueue;
     FileSystem m_fileSystem;
+    TextureManager m_textureManager;
 };
 
 } // namespace Geni
